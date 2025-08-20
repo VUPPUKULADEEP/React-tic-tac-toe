@@ -7,6 +7,10 @@ app.get('/',(req,res) => {
     res.send('hello')
 })
 
+app.get('/check',(req,res) =>{
+    
+})
+
 app.listen(3000, ()=>{
     console.log('it is ready')
 })
