@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Turns from './Turns';
 const Board = () => {
     const [count, setCount] = useState(0)
-    const [position, setPosition] = useState(null)
+    const [position, setPosition] = useState(0)
     const arr = [0,1,2,3,4,5,6,7,8]
     const [currentPlayer,setCurrentPlayer] = useState('X')
     const  [board,setBoard] =  useState(Array(9).fill(''))
@@ -21,10 +21,11 @@ const Board = () => {
       setPosition(num)
       setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
       setCount(count+1)
-      if(count >= 4){
+      if(count+1 > 3){
+        console.log('api is called')
         axios.post('http://localhost:3000/check',{
           board:newBoard,
-          position:position,
+          position:num,
           count:count
         })
         .then(function(response){
