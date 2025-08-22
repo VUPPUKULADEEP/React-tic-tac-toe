@@ -1,3 +1,18 @@
+.wrapper{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  font-display:block;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .border{
     display: grid;
     grid-template-rows: repeat(3, 1fr);
@@ -16,4 +31,18 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    font-size:300%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.heading
+ {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  margin-bottom: 2.5%;
 }

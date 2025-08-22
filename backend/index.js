@@ -12,6 +12,8 @@ app.get('/',(req,res) => {
 app.post('/check',(req,res) =>{
     const {board, position, count} = req.body
     console.log(board)
+    console.log(position+' is postion')
+    console.log(count+' is count')
     const win = {
     0:[[1,2],[4,8],[3,6]],
     1:[[4,7],[0,2]],
@@ -25,13 +27,20 @@ app.post('/check',(req,res) =>{
     };
 
     let arr = win[position]
-    for(let a in arr){
-        if(board[position] == board[a[0]] && board[position] == board[a[1]]){
-            res.send(`{board[position]} won the game`)
+    console.log(arr)
+    for(let a of arr){
+        console.log(board[position])
+        if(board[position] === board[a[0]] && board[position] === board[a[1]]){
+            console.log(`${board[position]} won match`)
+            res.json({
+                message:`${board[position]} won match`
+            })
         }
     }
-    if(count == 9){
-        res.send('draw match')
+    if(count == 8){
+        res.json({
+                message:`draw`
+            })
     }
 
 })
